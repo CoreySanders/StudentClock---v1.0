@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SchoolDataModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="SchoolDataModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Class" EntityType="SchoolDataModel.Store.Class" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clock" EntityType="SchoolDataModel.Store.Clock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="SchoolDataModel.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grades" EntityType="SchoolDataModel.Store.Grades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Instructors" EntityType="SchoolDataModel.Store.Instructors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Registration" EntityType="SchoolDataModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="SchoolDataModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Student" EntityType="SchoolDataModel.Store.Student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZIPCodes" EntityType="SchoolDataModel.Store.ZIPCodes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Accounts_Student" Association="SchoolDataModel.Store.FK_Accounts_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Courses" Association="SchoolDataModel.Store.FK_Class_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Student" Association="SchoolDataModel.Store.FK_Class_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clock_Class" Association="SchoolDataModel.Store.FK_Clock_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Clock" EntitySet="Clock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grades_Student" Association="SchoolDataModel.Store.FK_Grades_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Grades" EntitySet="Grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registration_Student" Association="SchoolDataModel.Store.FK_Registration_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Accounts" Association="SchoolDataModel.Store.FK_Student_Accounts">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZIPCodes_States" Association="SchoolDataModel.Store.FK_ZIPCodes_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="ZIPCodes" EntitySet="ZIPCodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="InstructorID" Type="int" />
+    <Property Name="Username" Type="nchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccessLevel" Type="int" />
+    <Property Name="Balance" Type="decimal" Nullable="false" />
+    <Property Name="DueDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="StudentID" Type="int" />
+    <Property Name="ClassID" Type="int" Nullable="false" />
+    <Property Name="InstructorID" Type="int" />
+    <Property Name="CourseID" Type="int" />
+    <Property Name="Day" Type="nchar" MaxLength="10" />
+    <Property Name="Start_Time" Type="time" Precision="0" />
+    <Property Name="End_Time" Type="time" Precision="0" />
+  </EntityType>
+  <EntityType Name="Clock">
+    <Key>
+      <PropertyRef Name="ClockID" />
+    </Key>
+    <Property Name="ClockID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="ClassID" Type="int" />
+    <Property Name="Clock" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="ClassID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="AwardedCredit" Type="float" />
+    <Property Name="BuildingNumber" Type="int" />
+    <Property Name="RoomNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grades">
+    <Key>
+      <PropertyRef Name="AssignmentID" />
+    </Key>
+    <Property Name="AssignmentID" Type="int" Nullable="false" />
+    <Property Name="ClassID" Type="int" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="Grade" Type="float" />
+    <Property Name="Type" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Instructors">
+    <Key>
+      <PropertyRef Name="InstructorID" />
+    </Key>
+    <Property Name="InstructorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" />
+    <Property Name="ClassID" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="StateCode" Type="nchar" MaxLength="2" />
+    <Property Name="AccessLevel" Type="int" />
+    <Property Name="AccountID" Type="int" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="RegistrationID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="Estimated_Finish_Date" Type="date" />
+    <Property Name="Credits" Type="decimal" />
+    <Property Name="RegistrationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateCode" />
+    </Key>
+    <Property Name="StateCode" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="StateName" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="nchar" MaxLength="30" />
+    <Property Name="Last_Name" Type="nchar" MaxLength="30" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="StateCode" Type="nchar" MaxLength="2" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ZIPCodes">
+    <Key>
+      <PropertyRef Name="ZipCode" />
+    </Key>
+    <Property Name="ZipCode" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="City" Type="varchar" MaxLength="35" />
+    <Property Name="StateCode" Type="char" MaxLength="2" />
+  </EntityType>
+  <Association Name="FK_Accounts_Student">
+    <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="0..1" />
+    <End Role="Accounts" Type="SchoolDataModel.Store.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_Courses">
+    <End Role="Courses" Type="SchoolDataModel.Store.Courses" Multiplicity="0..1" />
+    <End Role="Class" Type="SchoolDataModel.Store.Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="Class">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_Student">
+    <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="0..1" />
+    <End Role="Class" Type="SchoolDataModel.Store.Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Class">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clock_Class">
+    <End Role="Class" Type="SchoolDataModel.Store.Class" Multiplicity="0..1" />
+    <End Role="Clock" Type="SchoolDataModel.Store.Clock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="Clock">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grades_Student">
+    <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="0..1" />
+    <End Role="Grades" Type="SchoolDataModel.Store.Grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Grades">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registration_Student">
+    <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="1" />
+    <End Role="Registration" Type="SchoolDataModel.Store.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Accounts">
+    <End Role="Accounts" Type="SchoolDataModel.Store.Accounts" Multiplicity="0..1" />
+    <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZIPCodes_States">
+    <End Role="States" Type="SchoolDataModel.Store.States" Multiplicity="0..1" />
+    <End Role="ZIPCodes" Type="SchoolDataModel.Store.ZIPCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StateCode" />
+      </Principal>
+      <Dependent Role="ZIPCodes">
+        <PropertyRef Name="StateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

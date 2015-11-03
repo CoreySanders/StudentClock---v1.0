@@ -1,0 +1,28 @@
+C:\Users\corey.sanders\Documents\Visual Studio 2012\Projects\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll
+C:\Users\corey.sanders\Documents\Visual Studio 2012\Projects\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.pdb
+C:\Users\corey.sanders\Documents\Visual Studio 2012\Projects\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
+C:\Users\corey.sanders\Documents\Visual Studio 2012\Projects\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.pdb
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.csprojResolveAssemblyReference.cache
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\TestProject.exe
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\EntityFramework.dll
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\TestProject.pdb
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\EntityFramework.xml
+C:\Users\corey.sanders\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll.config
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll.config
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.pdb
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\SchoolDB.dll
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\TestProject.exe
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\EntityFramework.dll
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\SchoolDB.pdb
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\TestProject.pdb
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\EntityFramework.xml
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.csprojResolveAssemblyReference.cache
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
+C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb

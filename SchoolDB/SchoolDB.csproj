@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE02243D-28BB-4834-BC98-44339E56F5B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolDB</RootNamespace>
+    <AssemblyName>SchoolDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDB.cs" />
+    <Compile Include="EFAccount.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFClass.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFClock.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFCourse.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFGrade.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFInstructor.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFRegistration.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFState.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFStudent.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFZipCode.cs">
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorDB.cs" />
+    <Compile Include="SchoolData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDB.cs" />
+    <Compile Include="SchoolValidation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SchoolData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchoolData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="SchoolData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+      <LastGenOutput>SchoolData.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SchoolData.edmx.diagram">
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+    </None>
+    <None Include="SchoolData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+      <LastGenOutput>SchoolData.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

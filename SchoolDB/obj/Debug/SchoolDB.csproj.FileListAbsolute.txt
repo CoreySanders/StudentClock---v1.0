@@ -1,0 +1,24 @@
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.dll.config
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\EntityFramework.dll
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\EntityFramework.xml
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.csprojResolveAssemblyReference.cache
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.dll.config
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.dll
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\SchoolDB.pdb
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\EntityFramework.dll
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\bin\Debug\EntityFramework.xml
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.csprojResolveAssemblyReference.cache
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.dll
+C:\Users\Corey\Downloads\StudentAdministrativeApplication\SchoolDB\obj\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\bin\Debug\SchoolDB.dll.config
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\bin\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\bin\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\bin\Debug\EntityFramework.dll
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\bin\Debug\EntityFramework.xml
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\obj\Debug\SchoolDB.csprojResolveAssemblyReference.cache
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\obj\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\SchoolDB\obj\Debug\SchoolDB.pdb
