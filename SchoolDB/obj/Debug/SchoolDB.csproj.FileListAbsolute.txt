@@ -27,6 +27,5 @@ C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\bin\Debug\S
 C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\bin\Debug\SchoolDB.pdb
 C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\bin\Debug\EntityFramework.dll
 C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\bin\Debug\EntityFramework.xml
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\obj\Debug\SchoolDB.csprojResolveAssemblyReference.cache
 C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\obj\Debug\SchoolDB.dll
 C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\SchoolDB\obj\Debug\SchoolDB.pdb

@@ -68,11 +68,6 @@
     <Compile Include="ClockReport.xaml.cs">
       <DependentUpon>ClockReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StudentClock.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentClock.xsd</DependentUpon>
-    </Compile>
     <Page Include="AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,17 +120,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="StudentClock.xsc">
-      <DependentUpon>StudentClock.xsd</DependentUpon>
-    </None>
-    <None Include="StudentClock.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StudentClock.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StudentClock.xss">
-      <DependentUpon>StudentClock.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

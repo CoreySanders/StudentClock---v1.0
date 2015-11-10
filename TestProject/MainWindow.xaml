@@ -42,7 +42,7 @@
             <RowDefinition Height="93*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="166" Stroke="White" VerticalAlignment="Top" Width="525" MouseDown="Rectangle_MouseDown" Grid.RowSpan="2" Margin="1,-1,-1,0">
+        <Rectangle HorizontalAlignment="Left" Height="166" Stroke="White" VerticalAlignment="Top" Width="525" MouseDown="Rectangle_MouseDown" Grid.RowSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

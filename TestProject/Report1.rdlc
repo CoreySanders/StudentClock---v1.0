@@ -22,7 +22,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.23833in</Top>
-        <Left>1.10417in</Left>
+        <Left>1.10986in</Left>
         <Height>0.45833in</Height>
         <Width>2.75in</Width>
         <Style>
@@ -36,7 +36,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Left>4.82986in</Left>
+        <Left>5.51957in</Left>
         <Height>10.95708in</Height>
         <Width>0in</Width>
         <ZIndex>1</ZIndex>
@@ -48,9 +48,9 @@
       </Line>
       <Line Name="Line2">
         <Top>1.10292in</Top>
-        <Left>5.94666in</Left>
+        <Left>6.35291in</Left>
         <Height>0in</Height>
-        <Width>-5.94666in</Width>
+        <Width>-6.35291in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -63,7 +63,7 @@
         <Value>CoreySanders</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.125in</Top>
-        <Left>4.89931in</Left>
+        <Left>5.51957in</Left>
         <Height>0.84375in</Height>
         <Width>0.82292in</Width>
         <ZIndex>3</ZIndex>
@@ -83,7 +83,10 @@
               <Width>1.52083in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52083in</Width>
+              <Width>1.54987in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.61458in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -103,7 +106,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -133,7 +138,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -159,14 +166,48 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Class ID</Value>
+                              <Value>Class</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Room #</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -198,7 +239,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Name</rd:DefaultName>
@@ -228,7 +271,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Clock</rd:DefaultName>
@@ -254,14 +299,48 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ClassID.Value</Value>
+                              <Value>=Fields!ClassName.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ClassID</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!RoomNumber.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -284,6 +363,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -298,9 +378,9 @@
         </TablixRowHierarchy>
         <DataSetName>dsClocks</DataSetName>
         <Top>1.43625in</Top>
-        <Left>0.23833in</Left>
+        <Left>0.24402in</Left>
         <Height>0.54166in</Height>
-        <Width>4.56249in</Width>
+        <Width>5.20611in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -316,7 +396,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>5.96181in</Width>
+  <Width>6.35291in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -349,8 +429,12 @@
           <DataField>Clock</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="ClassID">
-          <DataField>ClassID</DataField>
+        <Field Name="ClassName">
+          <DataField>ClassName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RoomNumber">
+          <DataField>RoomNumber</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>

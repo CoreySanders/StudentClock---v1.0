@@ -3,15 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
-        Title="ClockReport" Height="565.823" Width="579.747" Loaded="Window_Loaded">
+        Title="ClockReport" Height="565.823" Width="579.747" Loaded="Window_Loaded" UseLayoutRounding="False" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None">
     <Grid Background="#FF5D5C5C">
         <WindowsFormsHost x:Name="winReportView" Margin="0,73,0,0" Panel.ZIndex="1">
             <rv:ReportViewer x:Name="repView" ProcessingMode="Local" Visible="True" Enabled="True"/>
         </WindowsFormsHost>
-        <Button x:Name="btnSearchClocks" Content="Generate Report" HorizontalAlignment="Left" Margin="232,46,0,0" VerticalAlignment="Top" Width="107"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="93,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="388,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSearchClocks" Content="Generate Report" HorizontalAlignment="Left" Margin="232,46,0,0" VerticalAlignment="Top" Width="107" Click="btnSearchClocks_Click"/>
+        <TextBox x:Name="txtFromDate" HorizontalAlignment="Left" Height="23" Margin="93,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding Path="Date" StringFormat="{}{0:MM/dd/yyyy}" />
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="txtToDate" HorizontalAlignment="Left" Height="23" Margin="388,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding Path="Date" StringFormat="{}{0:MM/dd/yyyy}" />
+            </TextBox.Text>
+        </TextBox>
         <Label Content="From:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,7,0,0" Foreground="White"/>
         <Label Content="To:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="362,7,0,0" RenderTransformOrigin="7.086,0.948" Foreground="White"/>
+        <Button x:Name="btnClose" Content="X" Margin="562,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="18" Height="19" Click="btnClose_Click"/>
     </Grid>
 </Window>

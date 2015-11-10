@@ -31,10 +31,28 @@ namespace TestProject
         {
             repView.LocalReport.ReportEmbeddedResource = "Report1.rdlc";
             repView.LocalReport.ReportPath = "C:\\Users\\corey.sanders\\Documents\\GitHub\\StudentClock---v1.0\\TestProject\\Report1.rdlc";
+            GenerateNewReport(DateTime.Now.AddDays(-1), DateTime.Now);
+        }
+
+        private void GenerateNewReport(DateTime startTime, DateTime endTime)
+        {
+            endTime = endTime <= DateTime.Now ? endTime : DateTime.Now;
             repView.LocalReport.DataSources.Clear();
-            repView.LocalReport.DataSources.Add(InstructorDB.GetClockTimes(DateTime.Now.AddDays(-300), DateTime.Now));
+            repView.LocalReport.DataSources.Add(InstructorDB.GetClockTimes(startTime, endTime));
             repView.ZoomMode = ZoomMode.PageWidth;
             repView.RefreshReport();
+        }
+
+        private void btnSearchClocks_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime startDate = DateTime.Parse(txtFromDate.Text);
+            DateTime endDate = DateTime.Parse(txtToDate.Text);
+            GenerateNewReport(startDate, endDate);
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

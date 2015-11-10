@@ -26,14 +26,8 @@ namespace SchoolDB
         public static Boolean IsValidInstructorID(int instructorID)
         {
             int validInstructor = schoolData.EFInstructors.Where(i => i.InstructorID == instructorID).Count();
-            if (validInstructor > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            Boolean valid = validInstructor > 0 ? true : false;
+            return valid;
         }
 
         public static ReportDataSource GetClockTimes(DateTime startDate, DateTime endDate)
@@ -42,12 +36,14 @@ namespace SchoolDB
             {
                 var clocks = (from clock in schoolData.EFClocks
                               join student in schoolData.EFStudents on clock.StudentID equals student.StudentID
+                              join course in schoolData.EFCourses on clock.ClassID equals course.ClassID
                               where clock.Clock > startDate && clock.Clock < endDate
                               select new
                               {
                                   Name = student.First_Name.Trim() + " " + student.Last_Name,
                                   Clock = clock.Clock,
-                                  ClassID = clock.ClassID
+                                  ClassName = course.Description,
+                                  RoomNumber = course.RoomNumber
                               }).AsEnumerable();
                 ReportDataSource ds = new ReportDataSource("dsClocks", clocks);
                 return ds;
