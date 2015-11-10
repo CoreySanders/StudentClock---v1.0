@@ -36,9 +36,8 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>0.00917in</Top>
-        <Left>5.82292in</Left>
-        <Height>8.77083in</Height>
+        <Left>4.82986in</Left>
+        <Height>10.95708in</Height>
         <Width>0in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -49,9 +48,9 @@
       </Line>
       <Line Name="Line2">
         <Top>1.10292in</Top>
-        <Left>7.09375in</Left>
+        <Left>5.94666in</Left>
         <Height>0in</Height>
-        <Width>-7.09375in</Width>
+        <Width>-5.94666in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -63,10 +62,10 @@
         <Source>Embedded</Source>
         <Value>CoreySanders</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.12375in</Top>
-        <Left>5.98833in</Left>
+        <Top>0.125in</Top>
+        <Left>4.89931in</Left>
         <Height>0.84375in</Height>
-        <Width>0.97917in</Width>
+        <Width>0.82292in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -300,8 +299,8 @@
         <DataSetName>dsClocks</DataSetName>
         <Top>1.43625in</Top>
         <Left>0.23833in</Left>
-        <Height>0.54167in</Height>
-        <Width>4.5625in</Width>
+        <Height>0.54166in</Height>
+        <Width>4.56249in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -310,14 +309,14 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>8.78in</Height>
+    <Height>10.95708in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.095in</Width>
+  <Width>5.96181in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

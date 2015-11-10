@@ -68,11 +68,6 @@
     <Compile Include="ClockReport.xaml.cs">
       <DependentUpon>ClockReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="dsClockData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsClockData.xsd</DependentUpon>
-    </Compile>
     <Compile Include="StudentClock.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,17 +117,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
-    <None Include="dsClockData.xsc">
-      <DependentUpon>dsClockData.xsd</DependentUpon>
-    </None>
-    <None Include="dsClockData.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsClockData.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dsClockData.xss">
-      <DependentUpon>dsClockData.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SchoolDB.EFClock.datasource" />
     <None Include="Properties\DataSources\SchoolDB.EFStudent.datasource" />

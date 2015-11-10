@@ -74,3 +74,26 @@ C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\TestPro
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\TestProject\obj\Debug\RdlCompile.compiled
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\TestProject\obj\Debug\ClockReport.baml
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\TestProject\obj\Debug\ClockReport.g.cs
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\TestProject.exe.config
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.exe
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.pdb
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\TestProject.exe
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\TestProject.pdb
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\EntityFramework.dll
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\SchoolDB.dll
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\SchoolDB.pdb
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\bin\Debug\EntityFramework.xml
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.csprojResolveAssemblyReference.cache
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\AdminPanel.baml
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\ClockReport.baml
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\MainWindow.baml
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\AdminPanel.g.cs
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\ClockReport.g.cs
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\MainWindow.g.cs
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\App.g.cs
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject_MarkupCompile.cache
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.g.resources
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\TestProject.csproj.GenerateResource.Cache
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\RdlCompile.cache
+C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\TestProject\obj\Debug\RdlCompile.compiled

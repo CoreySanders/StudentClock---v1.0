@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Reporting.WinForms;
@@ -47,8 +48,8 @@ namespace SchoolDB
                                   Name = student.First_Name.Trim() + " " + student.Last_Name,
                                   Clock = clock.Clock,
                                   ClassID = clock.ClassID
-                              }).AsQueryable();
-                ReportDataSource ds = new ReportDataSource("Clocks", clocks);
+                              }).AsEnumerable();
+                ReportDataSource ds = new ReportDataSource("dsClocks", clocks);
                 return ds;
             }
             catch (Exception ex)
