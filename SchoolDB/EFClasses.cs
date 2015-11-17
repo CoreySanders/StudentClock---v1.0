@@ -12,14 +12,13 @@ namespace SchoolDB
     using System;
     using System.Collections.Generic;
     
-    public partial class EFClass
+    public partial class EFClasses
     {
-        public EFClass()
+        public EFClasses()
         {
             this.Clocks = new HashSet<EFClock>();
         }
     
-        public Nullable<int> StudentID { get; set; }
         public int ClassID { get; set; }
         public Nullable<int> InstructorID { get; set; }
         public Nullable<int> CourseID { get; set; }
@@ -28,7 +27,6 @@ namespace SchoolDB
         public Nullable<System.TimeSpan> End_Time { get; set; }
     
         public virtual EFCourse Cours { get; set; }
-        public virtual EFStudent Student { get; set; }
         public virtual ICollection<EFClock> Clocks { get; set; }
     }
 }

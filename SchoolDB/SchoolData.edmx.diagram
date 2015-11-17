@@ -6,23 +6,23 @@
     <edmx:Diagrams>
       <Diagram DiagramId="524328e7e96841ad9a548beccdcf94b3" Name="Diagram1">
         <EntityTypeShape EntityType="SchoolDataModel.EFAccount" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDataModel.EFClass" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDataModel.EFClock" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFCourse" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFGrade" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDataModel.EFInstructor" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDataModel.EFInstructor" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFRegistration" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFState" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFStudent" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDataModel.EFZipCode" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="SchoolDataModel.FK_Accounts_Student" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDataModel.FK_Student_Accounts" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDataModel.FK_Class_Courses" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDataModel.FK_Class_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDataModel.FK_Clock_Class" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDataModel.FK_Grades_Student" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDataModel.FK_Registration_Student" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDataModel.FK_ZIPCodes_States" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchoolDataModel.EFSchedules" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="SchoolDataModel.EFClasses" Width="1.5" PointX="9.6420536756711321" PointY="27.841015813798187" />
+        <EntityTypeShape EntityType="SchoolDataModel.EFClocks" Width="1.5" PointX="0.0595156029143909" PointY="19.644972527234337" />
+        <AssociationConnector Association="SchoolDataModel.FK_Class_Courses" />
+        <AssociationConnector Association="SchoolDataModel.FK_Clock_Class" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
