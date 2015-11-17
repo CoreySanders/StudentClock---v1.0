@@ -29,18 +29,8 @@ namespace TestProject
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            repView.LocalReport.ReportEmbeddedResource = "Report1.rdlc";
-            repView.LocalReport.ReportPath = "C:\\Users\\corey.sanders\\Documents\\GitHub\\StudentClock---v1.0\\TestProject\\Report1.rdlc";
+            repView.LocalReport.ReportEmbeddedResource = "TestProject.Report1.rdlc";
             GenerateNewReport(DateTime.Now.AddDays(-1), DateTime.Now);
-        }
-
-        private void GenerateNewReport(DateTime startTime, DateTime endTime)
-        {
-            endTime = endTime <= DateTime.Now ? endTime : DateTime.Now;
-            repView.LocalReport.DataSources.Clear();
-            repView.LocalReport.DataSources.Add(InstructorDB.GetClockTimes(startTime, endTime));
-            repView.ZoomMode = ZoomMode.PageWidth;
-            repView.RefreshReport();
         }
 
         private void btnSearchClocks_Click(object sender, RoutedEventArgs e)
@@ -53,6 +43,16 @@ namespace TestProject
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+        private void GenerateNewReport(DateTime startTime, DateTime endTime)
+        {
+            endTime = endTime <= DateTime.Now ? endTime : DateTime.Now;
+            repView.LocalReport.DataSources.Clear();
+            repView.LocalReport.DataSources.Add(InstructorDB.GetClockTimes(startTime, endTime));
+            repView.ZoomMode = ZoomMode.PageWidth;
+            repView.RefreshReport();
         }
     }
 }

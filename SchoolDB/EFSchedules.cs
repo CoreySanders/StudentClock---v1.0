@@ -12,20 +12,12 @@ namespace SchoolDB
     using System;
     using System.Collections.Generic;
     
-    public partial class EFCourse
+    public partial class EFSchedules
     {
-        public EFCourse()
-        {
-            this.Classes = new HashSet<EFClasses>();
-        }
-    
-        public int CourseID { get; set; }
-        public int ClassID { get; set; }
-        public string Description { get; set; }
-        public Nullable<double> AwardedCredit { get; set; }
-        public Nullable<int> BuildingNumber { get; set; }
-        public int RoomNumber { get; set; }
-    
-        public virtual ICollection<EFClasses> Classes { get; set; }
+        public int ScheduleID { get; set; }
+        public Nullable<int> StudentID { get; set; }
+        public Nullable<int> ClassID { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
     }
 }

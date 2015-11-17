@@ -17,7 +17,6 @@ namespace SchoolDB
         public EFStudent()
         {
             this.Accounts = new HashSet<EFAccount>();
-            this.Classes = new HashSet<EFClass>();
             this.Grades = new HashSet<EFGrade>();
             this.Registrations = new HashSet<EFRegistration>();
         }
@@ -33,7 +32,6 @@ namespace SchoolDB
     
         public virtual ICollection<EFAccount> Accounts { get; set; }
         public virtual EFAccount Account { get; set; }
-        public virtual ICollection<EFClass> Classes { get; set; }
         public virtual ICollection<EFGrade> Grades { get; set; }
         public virtual ICollection<EFRegistration> Registrations { get; set; }
     }

@@ -26,8 +26,6 @@ namespace SchoolDB
         }
     
         public DbSet<EFAccount> EFAccounts { get; set; }
-        public DbSet<EFClass> EFClasses { get; set; }
-        public DbSet<EFClock> EFClocks { get; set; }
         public DbSet<EFCourse> EFCourses { get; set; }
         public DbSet<EFGrade> EFGrades { get; set; }
         public DbSet<EFInstructor> EFInstructors { get; set; }
@@ -35,5 +33,8 @@ namespace SchoolDB
         public DbSet<EFState> EFStates { get; set; }
         public DbSet<EFStudent> EFStudents { get; set; }
         public DbSet<EFZipCode> EFZipCodes { get; set; }
+        public DbSet<EFSchedules> EFSchedule { get; set; }
+        public DbSet<EFClasses> EFClass { get; set; }
+        public DbSet<EFClock> EFClock { get; set; }
     }
 }

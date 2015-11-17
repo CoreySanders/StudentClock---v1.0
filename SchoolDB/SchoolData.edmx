@@ -13,6 +13,7 @@
           <EntitySet Name="Grades" EntityType="SchoolDataModel.Store.Grades" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Instructors" EntityType="SchoolDataModel.Store.Instructors" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Registration" EntityType="SchoolDataModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schedules" EntityType="SchoolDataModel.Store.Schedules" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="States" EntityType="SchoolDataModel.Store.States" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Student" EntityType="SchoolDataModel.Store.Student" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ZIPCodes" EntityType="SchoolDataModel.Store.ZIPCodes" store:Type="Tables" Schema="dbo" />
@@ -22,10 +23,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Class_Courses" Association="SchoolDataModel.Store.FK_Class_Courses">
             <End Role="Courses" EntitySet="Courses" />
-            <End Role="Class" EntitySet="Class" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Class_Student" Association="SchoolDataModel.Store.FK_Class_Student">
-            <End Role="Student" EntitySet="Student" />
             <End Role="Class" EntitySet="Class" />
           </AssociationSet>
           <AssociationSet Name="FK_Clock_Class" Association="SchoolDataModel.Store.FK_Clock_Class">
@@ -66,7 +63,6 @@
           <Key>
             <PropertyRef Name="ClassID" />
           </Key>
-          <Property Name="StudentID" Type="int" />
           <Property Name="ClassID" Type="int" Nullable="false" />
           <Property Name="InstructorID" Type="int" />
           <Property Name="CourseID" Type="int" />
@@ -81,7 +77,10 @@
           <Property Name="ClockID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="StudentID" Type="int" Nullable="false" />
           <Property Name="ClassID" Type="int" />
-          <Property Name="Clock" Type="datetime" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="ClockedIn" Type="bit" />
+          <Property Name="Absence" Type="bit" />
         </EntityType>
         <EntityType Name="Courses">
           <Key>
@@ -127,6 +126,16 @@
           <Property Name="Estimated_Finish_Date" Type="date" />
           <Property Name="Credits" Type="decimal" />
           <Property Name="RegistrationID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedules">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
         </EntityType>
         <EntityType Name="States">
           <Key>
@@ -177,18 +186,6 @@
             </Principal>
             <Dependent Role="Class">
               <PropertyRef Name="CourseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Class_Student">
-          <End Role="Student" Type="SchoolDataModel.Store.Student" Multiplicity="0..1" />
-          <End Role="Class" Type="SchoolDataModel.Store.Class" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="Class">
-              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -258,8 +255,6 @@
       <Schema Namespace="SchoolDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SchoolDataEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="EFAccounts" EntityType="SchoolDataModel.EFAccount" />
-          <EntitySet Name="EFClasses" EntityType="SchoolDataModel.EFClass" />
-          <EntitySet Name="EFClocks" EntityType="SchoolDataModel.EFClock" />
           <EntitySet Name="EFCourses" EntityType="SchoolDataModel.EFCourse" />
           <EntitySet Name="EFGrades" EntityType="SchoolDataModel.EFGrade" />
           <EntitySet Name="EFInstructors" EntityType="SchoolDataModel.EFInstructor" />
@@ -275,18 +270,6 @@
             <End Role="Accounts" EntitySet="EFAccounts" />
             <End Role="Student" EntitySet="EFStudents" />
           </AssociationSet>
-          <AssociationSet Name="FK_Class_Courses" Association="SchoolDataModel.FK_Class_Courses">
-            <End Role="Courses" EntitySet="EFCourses" />
-            <End Role="Class" EntitySet="EFClasses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Class_Student" Association="SchoolDataModel.FK_Class_Student">
-            <End Role="Student" EntitySet="EFStudents" />
-            <End Role="Class" EntitySet="EFClasses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Clock_Class" Association="SchoolDataModel.FK_Clock_Class">
-            <End Role="Class" EntitySet="EFClasses" />
-            <End Role="Clock" EntitySet="EFClocks" />
-          </AssociationSet>
           <AssociationSet Name="FK_Grades_Student" Association="SchoolDataModel.FK_Grades_Student">
             <End Role="Student" EntitySet="EFStudents" />
             <End Role="Grades" EntitySet="EFGrades" />
@@ -298,6 +281,17 @@
           <AssociationSet Name="FK_ZIPCodes_States" Association="SchoolDataModel.FK_ZIPCodes_States">
             <End Role="States" EntitySet="EFStates" />
             <End Role="ZIPCodes" EntitySet="EFZipCodes" />
+          </AssociationSet>
+          <EntitySet Name="EFSchedule" EntityType="SchoolDataModel.EFSchedules" />
+          <EntitySet Name="EFClass" EntityType="SchoolDataModel.EFClasses" />
+          <EntitySet Name="EFClock" EntityType="SchoolDataModel.EFClocks" />
+          <AssociationSet Name="FK_Class_Courses" Association="SchoolDataModel.FK_Class_Courses">
+            <End Role="EFCourse" EntitySet="EFCourses" />
+            <End Role="Class" EntitySet="EFClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clock_Class" Association="SchoolDataModel.FK_Clock_Class">
+            <End Role="Class" EntitySet="EFClass" />
+            <End Role="Clock" EntitySet="EFClock" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="EFAccount">
@@ -315,31 +309,6 @@
           <NavigationProperty Name="Student" Relationship="SchoolDataModel.FK_Accounts_Student" FromRole="Accounts" ToRole="Student" />
           <NavigationProperty Name="Students" Relationship="SchoolDataModel.FK_Student_Accounts" FromRole="Accounts" ToRole="Student" />
         </EntityType>
-        <EntityType Name="EFClass">
-          <Key>
-            <PropertyRef Name="ClassID" />
-          </Key>
-          <Property Name="StudentID" Type="Int32" />
-          <Property Name="ClassID" Type="Int32" Nullable="false" />
-          <Property Name="InstructorID" Type="Int32" />
-          <Property Name="CourseID" Type="Int32" />
-          <Property Name="Day" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Start_Time" Type="Time" Precision="0" />
-          <Property Name="End_Time" Type="Time" Precision="0" />
-          <NavigationProperty Name="Cours" Relationship="SchoolDataModel.FK_Class_Courses" FromRole="Class" ToRole="Courses" />
-          <NavigationProperty Name="Student" Relationship="SchoolDataModel.FK_Class_Student" FromRole="Class" ToRole="Student" />
-          <NavigationProperty Name="Clocks" Relationship="SchoolDataModel.FK_Clock_Class" FromRole="Class" ToRole="Clock" />
-        </EntityType>
-        <EntityType Name="EFClock">
-          <Key>
-            <PropertyRef Name="ClockID" />
-          </Key>
-          <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="ClassID" Type="Int32" />
-          <Property Name="Clock" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Class" Relationship="SchoolDataModel.FK_Clock_Class" FromRole="Clock" ToRole="Class" />
-          <Property Type="Int32" Name="ClockID" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="Fixed" />
-        </EntityType>
         <EntityType Name="EFCourse">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -350,7 +319,7 @@
           <Property Name="AwardedCredit" Type="Double" />
           <Property Name="BuildingNumber" Type="Int32" />
           <Property Name="RoomNumber" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Classes" Relationship="SchoolDataModel.FK_Class_Courses" FromRole="Courses" ToRole="Class" />
+          <NavigationProperty Name="Classes" Relationship="SchoolDataModel.FK_Class_Courses" FromRole="EFCourse" ToRole="Class" />
         </EntityType>
         <EntityType Name="EFGrade">
           <Key>
@@ -409,7 +378,6 @@
           <Property Name="AccountID" Type="Int32" />
           <NavigationProperty Name="Accounts" Relationship="SchoolDataModel.FK_Accounts_Student" FromRole="Student" ToRole="Accounts" />
           <NavigationProperty Name="Account" Relationship="SchoolDataModel.FK_Student_Accounts" FromRole="Student" ToRole="Accounts" />
-          <NavigationProperty Name="Classes" Relationship="SchoolDataModel.FK_Class_Student" FromRole="Student" ToRole="Class" />
           <NavigationProperty Name="Grades" Relationship="SchoolDataModel.FK_Grades_Student" FromRole="Student" ToRole="Grades" />
           <NavigationProperty Name="Registrations" Relationship="SchoolDataModel.FK_Registration_Student" FromRole="Student" ToRole="Registration" />
           <Property Type="String" Name="Photo" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -444,42 +412,6 @@
             </Principal>
             <Dependent Role="Student">
               <PropertyRef Name="AccountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Class_Courses">
-          <End Role="Courses" Type="SchoolDataModel.EFCourse" Multiplicity="0..1" />
-          <End Role="Class" Type="SchoolDataModel.EFClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Courses">
-              <PropertyRef Name="CourseID" />
-            </Principal>
-            <Dependent Role="Class">
-              <PropertyRef Name="CourseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Class_Student">
-          <End Role="Student" Type="SchoolDataModel.EFStudent" Multiplicity="0..1" />
-          <End Role="Class" Type="SchoolDataModel.EFClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="Class">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Clock_Class">
-          <End Role="Class" Type="SchoolDataModel.EFClass" Multiplicity="0..1" />
-          <End Role="Clock" Type="SchoolDataModel.EFClock" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Class">
-              <PropertyRef Name="ClassID" />
-            </Principal>
-            <Dependent Role="Clock">
-              <PropertyRef Name="ClassID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -519,6 +451,66 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="EFSchedules">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Type="Int32" Name="ScheduleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StudentID" />
+          <Property Type="Int32" Name="ClassID" />
+          <Property Type="DateTime" Name="StartTime" Precision="3" />
+          <Property Type="DateTime" Name="EndTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EFClasses">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Type="Int32" Name="ClassID" Nullable="false" />
+          <Property Type="Int32" Name="InstructorID" />
+          <Property Type="Int32" Name="CourseID" />
+          <Property Type="String" Name="Day" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Time" Name="Start_Time" Precision="0" />
+          <Property Type="Time" Name="End_Time" Precision="0" />
+          <NavigationProperty Name="Cours" Relationship="SchoolDataModel.FK_Class_Courses" FromRole="Class" ToRole="EFCourse" />
+          <NavigationProperty Name="Clocks" Relationship="SchoolDataModel.FK_Clock_Class" FromRole="Class" ToRole="Clock" />
+        </EntityType>
+        <EntityType Name="EFClocks">
+          <Key>
+            <PropertyRef Name="ClockID" />
+          </Key>
+          <Property Type="Int32" Name="ClockID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="Int32" Name="ClassID" />
+          <Property Type="DateTime" Name="StartTime" Precision="3" />
+          <Property Type="DateTime" Name="EndTime" Precision="3" />
+          <Property Type="Boolean" Name="ClockedIn" />
+          <Property Type="Boolean" Name="Absence" />
+          <NavigationProperty Name="Class" Relationship="SchoolDataModel.FK_Clock_Class" FromRole="Clock" ToRole="Class" />
+        </EntityType>
+        <Association Name="FK_Class_Courses">
+          <End Type="SchoolDataModel.EFCourse" Role="EFCourse" Multiplicity="0..1" />
+          <End Type="SchoolDataModel.EFClasses" Role="Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EFCourse">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clock_Class">
+          <End Type="SchoolDataModel.EFClasses" Role="Class" Multiplicity="0..1" />
+          <End Type="SchoolDataModel.EFClocks" Role="Clock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Clock">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -536,29 +528,6 @@
                 <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EFClasses">
-            <EntityTypeMapping TypeName="SchoolDataModel.EFClass">
-              <MappingFragment StoreEntitySet="Class">
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-                <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
-                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
-                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EFClocks">
-            <EntityTypeMapping TypeName="SchoolDataModel.EFClock">
-              <MappingFragment StoreEntitySet="Clock">
-                <ScalarProperty Name="ClockID" ColumnName="ClockID" />
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-                <ScalarProperty Name="Clock" ColumnName="Clock" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -639,6 +608,42 @@
                 <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EFSchedule">
+            <EntityTypeMapping TypeName="SchoolDataModel.EFSchedules">
+              <MappingFragment StoreEntitySet="Schedules">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EFClass">
+            <EntityTypeMapping TypeName="SchoolDataModel.EFClasses">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EFClock">
+            <EntityTypeMapping TypeName="SchoolDataModel.EFClocks">
+              <MappingFragment StoreEntitySet="Clock">
+                <ScalarProperty Name="Absence" ColumnName="Absence" />
+                <ScalarProperty Name="ClockedIn" ColumnName="ClockedIn" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="ClockID" ColumnName="ClockID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -29,16 +29,64 @@ namespace SchoolDB
 
         public static Boolean StudentClockIn(int studentID, int classID)
         {
-            if (IsValidStudentID(studentID))
+            if (IsValidStudentID(studentID) && CheckClass(studentID, classID))
             {
                 EFClock clock = new EFClock();
                 clock.StudentID = studentID;
                 clock.ClassID = classID;
-                clock.Clock = DateTime.Now;
                 clock.ClockID = 56;
+                if (IsClockedIn(studentID, classID))
+                {
+                    clock.StartTime = DateTime.Now;
+                    clock.Absence = null;
+                }
+                else
+                {
+                    clock.EndTime = DateTime.Now;
+                }
                 schoolData.EFClocks.Add(clock);
                 schoolData.SaveChanges();
                 return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static Boolean CheckClass(int studentID, int classID)
+        {
+            if (IsValidStudentID(studentID))
+            {
+                var clockedIn = from schedule in schoolData.EFSchedule
+                                where schedule.StudentID == studentID
+                                && schedule.ClassID == classID
+                                && schedule.StartTime == DateTime.Now
+                                select new
+                                {
+                                    Student = schedule.StudentID
+                                };
+                bool clocked = clockedIn.Count() == 1 ? true : false;
+                return clocked;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static Boolean IsClockedIn(int studentID, int classID)
+        {
+            if (IsValidStudentID(studentID) && CheckClass(studentID, classID))
+            {
+                var clock = (from clocks in schoolData.EFClocks
+                             where (clocks.StudentID == studentID) &&
+                             (clocks.ClassID == classID) &&
+                             (clocks.ClockedIn == true)
+                             select clocks);
+
+                Boolean clockedIn = clock.Count() == 1 ? true : false;
+                return clockedIn;
             }
             else
             {

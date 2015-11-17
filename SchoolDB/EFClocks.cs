@@ -14,11 +14,14 @@ namespace SchoolDB
     
     public partial class EFClock
     {
+        public int ClockID { get; set; }
         public int StudentID { get; set; }
         public Nullable<int> ClassID { get; set; }
-        public Nullable<System.DateTime> Clock { get; set; }
-        public int ClockID { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
+        public Nullable<bool> ClockedIn { get; set; }
+        public Nullable<bool> Absence { get; set; }
     
-        public virtual EFClass Class { get; set; }
+        public virtual EFClasses Class { get; set; }
     }
 }
