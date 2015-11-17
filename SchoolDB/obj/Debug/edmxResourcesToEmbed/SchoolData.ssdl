@@ -72,7 +72,7 @@
     <Property Name="ClockID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StudentID" Type="int" Nullable="false" />
     <Property Name="ClassID" Type="int" />
-    <Property Name="StartTime" Type="datetime" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
     <Property Name="EndTime" Type="datetime" />
     <Property Name="ClockedIn" Type="bit" />
     <Property Name="Absence" Type="bit" />

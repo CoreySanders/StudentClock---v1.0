@@ -16,7 +16,7 @@ namespace SchoolDB
     {
         public EFCourse()
         {
-            this.Classes = new HashSet<EFClasses>();
+            this.Classes = new HashSet<EFClass>();
         }
     
         public int CourseID { get; set; }
@@ -26,6 +26,6 @@ namespace SchoolDB
         public Nullable<int> BuildingNumber { get; set; }
         public int RoomNumber { get; set; }
     
-        public virtual ICollection<EFClasses> Classes { get; set; }
+        public virtual ICollection<EFClass> Classes { get; set; }
     }
 }

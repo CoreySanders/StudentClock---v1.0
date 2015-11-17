@@ -52,10 +52,10 @@
     <Compile Include="EFAccount.cs">
       <DependentUpon>SchoolData.tt</DependentUpon>
     </Compile>
-    <Compile Include="EFClasses.cs">
+    <Compile Include="EFClass.cs">
       <DependentUpon>SchoolData.tt</DependentUpon>
     </Compile>
-    <Compile Include="EFClocks.cs">
+    <Compile Include="EFClock.cs">
       <DependentUpon>SchoolData.tt</DependentUpon>
     </Compile>
     <Compile Include="EFCourse.cs">
@@ -70,7 +70,7 @@
     <Compile Include="EFRegistration.cs">
       <DependentUpon>SchoolData.tt</DependentUpon>
     </Compile>
-    <Compile Include="EFSchedules.cs">
+    <Compile Include="EFSchedule.cs">
       <DependentUpon>SchoolData.tt</DependentUpon>
     </Compile>
     <Compile Include="EFState.cs">
@@ -103,30 +103,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="SchoolData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SchoolData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
-    <None Include="SchoolData.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolData.edmx</DependentUpon>
-      <LastGenOutput>SchoolData.Context.cs</LastGenOutput>
-    </None>
     <None Include="SchoolData.edmx.diagram">
       <DependentUpon>SchoolData.edmx</DependentUpon>
-    </None>
-    <None Include="SchoolData.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolData.edmx</DependentUpon>
-      <LastGenOutput>SchoolData.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SchoolData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+      <LastGenOutput>SchoolData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SchoolData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolData.edmx</DependentUpon>
+      <LastGenOutput>SchoolData.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

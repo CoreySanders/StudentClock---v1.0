@@ -12,7 +12,7 @@ namespace SchoolDB
     using System;
     using System.Collections.Generic;
     
-    public partial class EFSchedules
+    public partial class EFSchedule
     {
         public int ScheduleID { get; set; }
         public Nullable<int> StudentID { get; set; }

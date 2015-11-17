@@ -14,7 +14,7 @@ namespace SchoolDB
     
     public partial class EFZipCode
     {
-        public string ZipCode { get; set; }
+        public string ZipCode1 { get; set; }
         public string City { get; set; }
         public string StateCode { get; set; }
     

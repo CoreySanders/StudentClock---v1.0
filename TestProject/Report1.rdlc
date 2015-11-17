@@ -12,19 +12,21 @@
                 <Value>Student Clocks</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
-                  <FontSize>28pt</FontSize>
+                  <FontSize>48pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.23833in</Top>
-        <Left>1.10986in</Left>
-        <Height>0.45833in</Height>
-        <Width>2.75in</Width>
+        <Top>0.14458in</Top>
+        <Height>0.79515in</Height>
+        <Width>6.86554in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -36,8 +38,8 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Left>5.51957in</Left>
-        <Height>10.95708in</Height>
+        <Left>6.89332in</Left>
+        <Height>10.92708in</Height>
         <Width>0in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -47,10 +49,10 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>1.10292in</Top>
-        <Left>6.35291in</Left>
+        <Top>1.24875in</Top>
+        <Left>7.94194in</Left>
         <Height>0in</Height>
-        <Width>-6.35291in</Width>
+        <Width>-7.94194in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -62,8 +64,8 @@
         <Source>Embedded</Source>
         <Value>CoreySanders</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.125in</Top>
-        <Left>5.51957in</Left>
+        <Top>0.14458in</Top>
+        <Left>6.96277in</Left>
         <Height>0.84375in</Height>
         <Width>0.82292in</Width>
         <ZIndex>3</ZIndex>
@@ -77,16 +79,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.52083in</Width>
+              <Width>2.16666in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52083in</Width>
+              <Width>2.03568in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.54987in</Width>
+              <Width>1.6957in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.61458in</Width>
+              <Width>0.54166in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -377,10 +379,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsClocks</DataSetName>
-        <Top>1.43625in</Top>
-        <Left>0.24402in</Left>
+        <Top>1.58208in</Top>
+        <Left>0.10417in</Left>
         <Height>0.54166in</Height>
-        <Width>5.20611in</Width>
+        <Width>6.43971in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -389,19 +391,15 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>10.95708in</Height>
+    <Height>10.92708in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>6.35291in</Width>
+  <Width>7.94194in</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>

@@ -26,18 +26,6 @@ C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\bin\Debug\EntityFramew
 C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.csprojResolveAssemblyReference.cache
 C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
 C:\Users\Corey\Downloads\TestProject\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.csprojResolveAssemblyReference.cache
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll.config
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.dll
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\WPFStudentClockTests.pdb
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\SchoolDB.dll
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\TestProject.exe
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\EntityFramework.dll
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\SchoolDB.pdb
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\TestProject.pdb
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\bin\Debug\EntityFramework.xml
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
-C:\Users\corey.sanders\Documents\GitHub\StudentClock---v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.csprojResolveAssemblyReference.cache
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.dll
 C:\Users\corey.sanders\Downloads\StudentClock - v1.0\StudentClock - v1.0\WPFStudentClockTests\obj\Debug\WPFStudentClockTests.pdb

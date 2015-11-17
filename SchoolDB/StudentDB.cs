@@ -29,22 +29,26 @@ namespace SchoolDB
 
         public static Boolean StudentClockIn(int studentID, int classID)
         {
-            if (IsValidStudentID(studentID) && CheckClass(studentID, classID))
+            if (IsValidStudentID(studentID) && CheckClass(studentID, classID) && CheckClockTime(DateTime.Now, studentID))
             {
-                EFClock clock = new EFClock();
-                clock.StudentID = studentID;
-                clock.ClassID = classID;
-                clock.ClockID = 56;
+                 
                 if (IsClockedIn(studentID, classID))
                 {
-                    clock.StartTime = DateTime.Now;
-                    clock.Absence = null;
+                    EFClock clock = schoolData.EFClocks.Where(c => c.StudentID == studentID && c.ClockedIn == true).Single();
+                    clock.EndTime = DateTime.Now;
+                    clock.ClockedIn = false;
+                    clock.Absence = CheckClockTime(DateTime.Now, studentID) ? true : false;
                 }
                 else
                 {
-                    clock.EndTime = DateTime.Now;
+                    EFClock clock = new EFClock();
+                    clock.StudentID = studentID;
+                    clock.ClassID = classID;
+                    clock.StartTime = DateTime.Now;
+                    clock.ClockedIn = true;
+                    clock.Absence = CheckClockTime(DateTime.Now, studentID) ? true : false;
+                    schoolData.EFClocks.Add(clock);
                 }
-                schoolData.EFClocks.Add(clock);
                 schoolData.SaveChanges();
                 return true;
             }
@@ -58,10 +62,10 @@ namespace SchoolDB
         {
             if (IsValidStudentID(studentID))
             {
-                var clockedIn = from schedule in schoolData.EFSchedule
+                var clockedIn = from schedule in schoolData.EFSchedules
                                 where schedule.StudentID == studentID
                                 && schedule.ClassID == classID
-                                && schedule.StartTime == DateTime.Now
+                                && schedule.StartTime <= DateTime.Now
                                 select new
                                 {
                                     Student = schedule.StudentID
@@ -106,6 +110,17 @@ namespace SchoolDB
             {
                 return " ";
             }
+        }
+
+        public static Boolean CheckClockTime(DateTime clock, int studentID)
+        {
+            var schedule = (from schedules in schoolData.EFSchedules
+                                  where (schedules.StudentID == studentID)
+                                  && (schedules.StartTime <= clock)
+                                  && (schedules.EndTime >= clock)
+                                       select schedules);
+            Boolean clockCheck = schedule.Count() > 0 ? true : false;
+            return clockCheck;
         }
     }
 }

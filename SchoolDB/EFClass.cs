@@ -12,9 +12,9 @@ namespace SchoolDB
     using System;
     using System.Collections.Generic;
     
-    public partial class EFClasses
+    public partial class EFClass
     {
-        public EFClasses()
+        public EFClass()
         {
             this.Clocks = new HashSet<EFClock>();
         }

@@ -34,14 +34,14 @@ namespace SchoolDB
         {
             try
             {
-                var clocks = (from clock in schoolData.EFClocks
+                var clocks = (from clock in schoolData.EFClocks.AsEnumerable()
                               join student in schoolData.EFStudents on clock.StudentID equals student.StudentID
                               join course in schoolData.EFCourses on clock.ClassID equals course.ClassID
                               where clock.StartTime > startDate && clock.EndTime < endDate
                               select new
                               {
                                   Name = student.First_Name.Trim() + " " + student.Last_Name,
-                                  Clock = clock.StartTime,
+                                  Clock = clock.StartTime.ToShortDateString() + " " + clock.StartTime.ToShortTimeString() + " - " + clock.EndTime.Value.ToShortTimeString(),
                                   ClassName = course.Description,
                                   RoomNumber = course.RoomNumber
                               }).AsEnumerable();

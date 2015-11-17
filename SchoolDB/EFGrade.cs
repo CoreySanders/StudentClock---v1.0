@@ -17,7 +17,7 @@ namespace SchoolDB
         public int AssignmentID { get; set; }
         public Nullable<int> ClassID { get; set; }
         public Nullable<int> StudentID { get; set; }
-        public Nullable<double> Grade { get; set; }
+        public Nullable<double> Grade1 { get; set; }
         public string Type { get; set; }
     
         public virtual EFStudent Student { get; set; }

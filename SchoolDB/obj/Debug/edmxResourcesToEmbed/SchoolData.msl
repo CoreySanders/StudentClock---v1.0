@@ -15,6 +15,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EFClasses">
+      <EntityTypeMapping TypeName="SchoolDataModel.EFClass">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EFClocks">
+      <EntityTypeMapping TypeName="SchoolDataModel.EFClock">
+        <MappingFragment StoreEntitySet="Clock">
+          <ScalarProperty Name="ClockID" ColumnName="ClockID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ClockedIn" ColumnName="ClockedIn" />
+          <ScalarProperty Name="Absence" ColumnName="Absence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EFCourses">
       <EntityTypeMapping TypeName="SchoolDataModel.EFCourse">
         <MappingFragment StoreEntitySet="Courses">
@@ -33,7 +58,7 @@
           <ScalarProperty Name="AssignmentID" ColumnName="AssignmentID" />
           <ScalarProperty Name="ClassID" ColumnName="ClassID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Grade1" ColumnName="Grade" />
           <ScalarProperty Name="Type" ColumnName="Type" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -64,6 +89,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EFSchedules">
+      <EntityTypeMapping TypeName="SchoolDataModel.EFSchedule">
+        <MappingFragment StoreEntitySet="Schedules">
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EFStates">
       <EntityTypeMapping TypeName="SchoolDataModel.EFState">
         <MappingFragment StoreEntitySet="States">
@@ -75,7 +111,6 @@
     <EntitySetMapping Name="EFStudents">
       <EntityTypeMapping TypeName="SchoolDataModel.EFStudent">
         <MappingFragment StoreEntitySet="Student">
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
@@ -83,51 +118,16 @@
           <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
           <ScalarProperty Name="StateCode" ColumnName="StateCode" />
           <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EFZipCodes">
       <EntityTypeMapping TypeName="SchoolDataModel.EFZipCode">
         <MappingFragment StoreEntitySet="ZIPCodes">
-          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="ZipCode1" ColumnName="ZipCode" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="StateCode" ColumnName="StateCode" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EFSchedule">
-      <EntityTypeMapping TypeName="SchoolDataModel.EFSchedules">
-        <MappingFragment StoreEntitySet="Schedules">
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EFClass">
-      <EntityTypeMapping TypeName="SchoolDataModel.EFClasses">
-        <MappingFragment StoreEntitySet="Class">
-          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
-          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
-          <ScalarProperty Name="Day" ColumnName="Day" />
-          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
-          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
-          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EFClock">
-      <EntityTypeMapping TypeName="SchoolDataModel.EFClocks">
-        <MappingFragment StoreEntitySet="Clock">
-          <ScalarProperty Name="Absence" ColumnName="Absence" />
-          <ScalarProperty Name="ClockedIn" ColumnName="ClockedIn" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="ClockID" ColumnName="ClockID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
